@@ -1,7 +1,10 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+          (click)="menuClick.emit()">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Angular LearnJS</span>
+  <span>{{ title }}</span>
 </mat-toolbar>
 <!--<app-sidenav></app-sidenav>-->

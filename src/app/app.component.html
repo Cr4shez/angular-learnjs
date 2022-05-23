@@ -1,11 +1,8 @@
-<app-header></app-header>
-<app-sidenav></app-sidenav>
-<!--<mat-sidenav-container class="example-container">-->
-<!--  <mat-sidenav #sidenav mode="side">-->
-<!--    Sidenav content-->
-<!--  </mat-sidenav>-->
+<app-header
+  [title]="title"
+  (menuClick)="onMenuClick()"
+>
+</app-header>
+<app-sidenav [opened]="sideMenuOpened">
 
-<!--  <mat-sidenav-content>-->
-<router-outlet></router-outlet>
-<!--  </mat-sidenav-content>-->
-<!--</mat-sidenav-container>-->
+</app-sidenav>
