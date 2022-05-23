@@ -1,8 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav [opened]="opened" mode="side">
-    Sidenav content
+    <ng-content select="[side-nav-items]"></ng-content>
   </mat-sidenav>
 
   <mat-sidenav-content class="sidenav-content">
+    <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>

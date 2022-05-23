@@ -3,6 +3,19 @@
   (menuClick)="onMenuClick()"
 >
 </app-header>
-<app-sidenav [opened]="sideMenuOpened">
+<app-side-nav
+  [opened]="sideMenuOpened"
+>
+  <mat-list side-nav-items>
+    <mat-list-item>Первый</mat-list-item>
+    <mat-list-item>Второй</mat-list-item>
+    <mat-list-item>Третий</mat-list-item>
+  </mat-list>
 
-</app-sidenav>
+  <mat-form-field class="search-input">
+    <mat-label>Favorite food</mat-label>
+    <input matInput>
+  </mat-form-field>
+
+</app-side-nav>
+
