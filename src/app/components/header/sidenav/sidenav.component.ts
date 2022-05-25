@@ -1,4 +1,6 @@
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChild,
   Input,
@@ -15,9 +17,10 @@ import { MatSidenav } from '@angular/material/sidenav';
   selector: 'app-side-nav',
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.less'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent implements OnInit {
-  constructor() {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   @ViewChild('navListContainer', { read: ViewContainerRef, static: true })
   private navListContainer!: ViewContainerRef;
@@ -34,5 +37,6 @@ export class SidenavComponent implements OnInit {
 
   onToggleSideNav() {
     this.sideNav.toggle();
+    this.changeDetectorRef.markForCheck();
   }
 }
