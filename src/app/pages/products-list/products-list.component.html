@@ -1,5 +1,16 @@
 <app-input></app-input>
 
+<div *appGallery="let imgSrc from images; let next = next; let back = back;" class="gallery">
+  <button mat-icon-button (click)="back()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <img [src]="imgSrc" class="gallery__img"
+    alt="Изображение" />
+  <button mat-icon-button (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>
+
 <div *ngIf="products; else loadingStub" class="products-container">
   <app-product-card
     class="product-card"
