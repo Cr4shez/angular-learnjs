@@ -4,11 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { MatInputModule } from '@angular/material/input';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
+import { ProductsListModule } from './pages/products-list/products-list.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,10 +16,10 @@ import { HeaderModule } from './components/header/header.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HeaderModule,
     MatSidenavModule,
     MatListModule,
-    MatInputModule,
+    HeaderModule,
+    ProductsListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

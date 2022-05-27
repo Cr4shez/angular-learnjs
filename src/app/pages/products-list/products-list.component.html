@@ -1,0 +1,13 @@
+<app-input></app-input>
+
+<div *ngIf="products; else loadingStub" class="products-container">
+  <app-product-card
+    class="product-card"
+    *ngFor="let product of products; trackBy: trackByName"
+    [product]="product">
+  </app-product-card>
+</div>
+
+<ng-template #loadingStub>
+  <mat-spinner></mat-spinner>
+</ng-template>
