@@ -1,4 +1,4 @@
-<app-input></app-input>
+<app-input (textChanged)="searchString = $event"></app-input>
 
 <div *appGallery="let imgSrc from images; let next = next; let back = back;" class="gallery">
   <button mat-icon-button (click)="back()">
@@ -14,7 +14,7 @@
 <div *ngIf="products; else loadingStub" class="products-container">
   <app-product-card
     class="product-card"
-    *ngFor="let product of products; trackBy: trackByName"
+    *ngFor="let product of (products | productsFilter: searchString); trackBy: trackByName"
     [product]="product">
   </app-product-card>
 </div>

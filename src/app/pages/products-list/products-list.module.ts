@@ -8,6 +8,7 @@ import { InputModule } from '../../components/input/input.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { GalleryModule } from '../../shared/directives/gallery/gallery.module';
+import { productsFilterModule } from '../../shared/pipes/products-filter/products-filter.module';
 
 @NgModule({
   declarations: [ProductsListComponent, ProductCardComponent],
@@ -19,6 +20,7 @@ import { GalleryModule } from '../../shared/directives/gallery/gallery.module';
     MatIconModule,
     MatButtonModule,
     GalleryModule,
+    productsFilterModule,
   ],
   exports: [ProductsListComponent],
 })
