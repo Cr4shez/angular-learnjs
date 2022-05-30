@@ -4,6 +4,7 @@ import {
   ChangeDetectionStrategy,
   Input,
 } from '@angular/core';
+import { IProduct } from '../../../shared/types/product';
 
 @Component({
   selector: 'app-product-card',
@@ -12,6 +13,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductCardComponent {
-  @Input() product!: { name: string };
+  @Input() product!: IProduct;
   constructor() {}
 }
