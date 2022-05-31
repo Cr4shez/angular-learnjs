@@ -1,8 +1,8 @@
-import { PaginationPipe } from './pagination.pipe';
+import { PaginateArrayPipe } from './paginate-array.pipe';
 
 describe('PaginationPipe', () => {
   it('create an instance', () => {
-    const pipe = new PaginationPipe();
+    const pipe = new PaginateArrayPipe();
     expect(pipe).toBeTruthy();
   });
 });
