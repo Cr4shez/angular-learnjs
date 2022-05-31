@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
   selector: 'app-side-nav',
@@ -8,5 +8,4 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 export class SidenavComponent {
   @Input() opened!: boolean;
   @Input() navListTemplate!: TemplateRef<unknown>;
-  constructor() {}
 }
