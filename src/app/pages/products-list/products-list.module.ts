@@ -8,7 +8,9 @@ import { InputModule } from '../../components/input/input.module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { GalleryModule } from '../../shared/directives/gallery/gallery.module';
-import { productsFilterModule } from '../../shared/pipes/products-filter/products-filter.module';
+import { ProductsFilterModule } from '../../shared/pipes/products-filter/products-filter.module';
+import { PaginateArrayModule } from '../../shared/pipes/paginateArray/paginate-array.module';
+import { PaginateDirectiveModule } from '../../shared/directives/paginate/paginate.module';
 
 @NgModule({
   declarations: [ProductsListComponent, ProductCardComponent],
@@ -20,7 +22,9 @@ import { productsFilterModule } from '../../shared/pipes/products-filter/product
     MatIconModule,
     MatButtonModule,
     GalleryModule,
-    productsFilterModule,
+    ProductsFilterModule,
+    PaginateArrayModule,
+    PaginateDirectiveModule,
   ],
   exports: [ProductsListComponent],
 })
