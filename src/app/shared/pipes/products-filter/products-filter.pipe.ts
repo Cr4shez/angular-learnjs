@@ -10,11 +10,6 @@ export class ProductsFilterPipe implements PipeTransform {
     searchString: string,
     ...args: unknown[]
   ): IProduct[] {
-    console.log('Пришел массив', value);
-    console.log(
-      'Ушёл массив',
-      value.filter((value) => value.name.includes(searchString))
-    );
     return searchString
       ? value.filter((value) => value.name.includes(searchString))
       : value;
