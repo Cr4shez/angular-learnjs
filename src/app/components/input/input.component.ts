@@ -5,6 +5,7 @@ import {
   ElementRef,
   Output,
   EventEmitter,
+  ChangeDetectorRef,
 } from '@angular/core';
 
 @Component({
@@ -14,9 +15,11 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputComponent {
-  @ViewChild('searchInput', { read: ElementRef })
-  textInput!: ElementRef;
-  @Output()
-  textChanged = new EventEmitter<string>();
+  @ViewChild('searchInput', { read: ElementRef, static: true })
+  textInput!: ElementRef<HTMLInputElement>;
   constructor() {}
+
+  get currentText() {
+    return this.textInput.nativeElement.value;
+  }
 }
