@@ -11,12 +11,33 @@
   </button>
 </div>
 
-<div *ngIf="products; else loadingStub" class="products-container">
-  <app-product-card
-    class="product-card"
-    *ngFor="let product of (products | productsFilter: searchString); trackBy: trackByName"
-    [product]="product">
-  </app-product-card>
+<div *ngIf="(products | ProductsFilter: searchString | PaginateArray) as paginatedProducts; else loadingStub" class="products-container">
+
+  <ng-container
+    *appPaginate="let productGroup of paginatedProducts; let next = next; let back = back; let setIndex = setIndex;">
+
+    <app-product-card
+      class="product-card"
+      *ngFor="let product of productGroup; trackBy: trackByName"
+      [product]="product">
+    </app-product-card>
+
+    <button mat-icon-button (click)="back()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <button mat-icon-button
+            *ngFor="let group of paginatedProducts; index as i"
+            (click) = setIndex(i)>
+      {{i + 1}}
+    </button>
+
+    <button mat-icon-button (click)="next()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+
+  </ng-container>
+
 </div>
 
 <ng-template #loadingStub>
