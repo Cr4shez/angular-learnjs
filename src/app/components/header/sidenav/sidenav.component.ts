@@ -3,14 +3,11 @@ import {
   ChangeDetectorRef,
   Component,
   ContentChild,
-  Input,
   OnInit,
   TemplateRef,
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { MatList } from '@angular/material/list';
-import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({

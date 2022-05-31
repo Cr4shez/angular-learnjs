@@ -3,7 +3,6 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnInit,
   Output,
 } from '@angular/core';
 
@@ -16,6 +15,4 @@ import {
 export class HeaderComponent {
   @Input() title!: string;
   @Output() menuClick = new EventEmitter<void>();
-
-  constructor() {}
 }
