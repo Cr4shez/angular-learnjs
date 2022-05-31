@@ -10,8 +10,7 @@ export class PaginateArrayPipe<T> implements PipeTransform {
     batchSize: number = 3,
     ...args: unknown[]
   ): Array<any[]> {
-    console.log('Пришел массив', value);
-    let result = value.reduce(
+    return value.reduce(
       (groupedItems: Array<T[]>, item: T) => {
         const lastGroupIdx = groupedItems.length - 1;
         const lastGroup = groupedItems[lastGroupIdx];
@@ -23,7 +22,5 @@ export class PaginateArrayPipe<T> implements PipeTransform {
       },
       [[]]
     );
-    console.log('Ушёл массив', result);
-    return result;
   }
 }
