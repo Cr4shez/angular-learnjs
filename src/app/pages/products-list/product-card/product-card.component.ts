@@ -9,5 +9,4 @@ import { IProduct } from '../../../shared/types/product';
 })
 export class ProductCardComponent {
   @Input() product!: IProduct;
-  constructor() {}
 }
