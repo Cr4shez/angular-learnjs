@@ -3,9 +3,6 @@ import {
   ChangeDetectionStrategy,
   ViewChild,
   ElementRef,
-  Output,
-  EventEmitter,
-  ChangeDetectorRef,
 } from '@angular/core';
 
 @Component({
@@ -17,7 +14,6 @@ import {
 export class InputComponent {
   @ViewChild('searchInput', { read: ElementRef, static: true })
   textInput!: ElementRef<HTMLInputElement>;
-  constructor() {}
 
   get currentText() {
     return this.textInput.nativeElement.value;
