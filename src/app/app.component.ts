@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-learnjs';
+  sideMenuOpened = false;
+
+  onMenuClick() {
+    this.sideMenuOpened = !this.sideMenuOpened;
+  }
 }
